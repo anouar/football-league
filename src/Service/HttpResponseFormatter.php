@@ -9,8 +9,13 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 class HttpResponseFormatter
 {
 
-
-public function formatStatics($response)
+/**
+ * formatStatics
+ *
+ * @param [type] $response
+ * @return array
+ */
+public function formatStatics($response):Array
 {
     $statics =[];
     if(!empty($response)){
@@ -26,6 +31,27 @@ public function formatStatics($response)
             $statics['events'] = $events;
     }
     return $statics;
+}
+
+/**
+ * formatFilterResults
+ *
+ * @param [type] $response
+ * @return array
+ */
+public function formatFilterResults($response):Array
+{
+    $teams = [];
+    if(!empty($response)){
+        $resulats = (array)$response["response"];
+        if(count($resulats) > 0){
+            foreach($resulats as $result){
+                $teams[] = (array)$result->team;
+            }
+        }
+     
+    }
+    return $teams;   
 }
 
 } 

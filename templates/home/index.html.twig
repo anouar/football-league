@@ -4,6 +4,12 @@
 	{{ parent() }}
 {% endblock %}
 {% block body %}
+				{{ form_start(form, {'attr': {'class': 'form form-search'}}) }}
+					<div class="form-group col-lg-12">
+						{{ form_widget(form.team, {'attr': {'class': 'js-search-autocomplete form-control', 'placeholder': 'Select a team'}})  }}
+						{{ form_widget(form.search, {'label' : 'Enregistrer', 'attr': {'class': 'btn btn-primary search-btn'}})  }}
+					</div>
+					{{ form_end(form) }}
 	<a class="navbar-brand" href="#"><img src="{{asset('build/images/om-psg.png')}}" alt="OM vs PSG"/></a>
 {% endblock %}
 {% block javascripts %}

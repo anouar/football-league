@@ -21,3 +21,22 @@ $primary: darken(#428bca, 20%);
     margin-bottom: 100px !important;
     cursor: pointer;
 }
+.aa-dropdown-menu{
+    background: #ccc;
+    width: 100%;
+    cursor: pointer;
+    position: relative !important;
+}
+.algolia-autocomplete{
+    display: block !important;
+}
+.form-search{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+.search-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
