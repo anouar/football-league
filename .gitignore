@@ -1,0 +1,6 @@
+public/build/*
+vendor/
+.history/
+.history/*
+var/cache/*
+var/log/*

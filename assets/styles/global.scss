@@ -1,0 +1,17 @@
+
+$primary: darken(#428bca, 20%);
+
+@import "~bootstrap/scss/bootstrap";
+
+.bg-light {
+    border-bottom: 1px solid #ccc;
+}
+.text-red{
+    color: red;
+}
+.score {
+    font-size: 60px;
+}
+.table-striped{
+    margin-bottom: 100px !important;
+}
