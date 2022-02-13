@@ -17,6 +17,10 @@ Encore
         from: './assets/images',
         to: 'images/[path][name].[ext]',
     })
+    .copyFiles({
+        from: './assets/js',
+        to: 'js/[path][name].[ext]',
+    })
     /*
      * ENTRY CONFIG
      *
@@ -72,7 +76,11 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvideVariables({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();

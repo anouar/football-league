@@ -11,7 +11,13 @@ $primary: darken(#428bca, 20%);
 }
 .score {
     font-size: 60px;
+
+}
+.score span{
+        padding: 0 40px;
+        display: inline-block;
 }
 .table-striped{
     margin-bottom: 100px !important;
+    cursor: pointer;
 }

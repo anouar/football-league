@@ -4,12 +4,13 @@
 	{{ parent() }}
 {% endblock %}
 {% block body %}
-	<h4>Match Ligue 1 2021-2022</h4<p>Les 3 premiers se qualifient pour la Ligue des Champions.
+	<h4>Match Ligue 1 2021-2022</h4>
+	<p>Les 3 premiers se qualifient pour la Ligue des Champions.
 </p>
 <p>Le 4e et le vainqueur de la Coupe de France 2022 se qualifient pour la Ligue Europa, le 5e pour la Ligue Europa Conférence.</p>
 
 {% for result in results.response %}
-	<table class="table table-striped table-hover">
+	<table class="table table-striped table-hover match-day" id="match-{{result.fixture.id}}" data-fixture-id="{{result.fixture.id}}" >
 		<thead>
 			<tr>
 				<th scope="col" width="20%">{{result.fixture.date |date("d/m/Y g:ia") }}</th>
@@ -62,7 +63,19 @@
 			</tr>
 		</tbody>
 	</table>
-
-
-{% endfor %}{% endblock %}{% block javascripts %}
-{{ parent() }}{% endblock %}
+{% endfor %}
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+<script> 
+$(document).ready(function() {
+    $(".match-day").click(function() {
+		var id =  $(this).attr("data-fixture-id");
+		var link = "{{ url('league_match_detail', { 'id' : 'fixture_id'}) }}";
+		link = link.replace("fixture_id", id);
+        window.location.replace(link);
+    });
+});
+</script>
+<script src="{{ asset('build/js/custom.js') }}"></script>
+{% endblock %}

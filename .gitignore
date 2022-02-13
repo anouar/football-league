@@ -4,3 +4,5 @@ vendor/
 .history/*
 var/cache/*
 var/log/*
+node_modules/
+node_modules/*
