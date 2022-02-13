@@ -19,7 +19,7 @@ yarn install
 
 ```shell 
 symfony server:start
-Le site est accèsible en local sur sous l\'url suivante:
+Le site est accessible en local sur sous l'url suivante:
 https://127.0.0.1:8000                                                                                            
 ```
 
